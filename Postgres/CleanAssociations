@@ -1,0 +1,41 @@
+-- Update Antecedents Column
+
+UPDATE public.apriori_products_per_order
+set antecedents  = REPLACE(antecedents, 'frozenset({', '[');
+
+UPDATE public.apriori_products_per_order
+set antecedents  = REPLACE(antecedents, '})', ']');
+
+UPDATE public.apriori_products_per_order
+set antecedents  = REPLACE(antecedents, '''', '');
+
+
+UPDATE public.apriori_products_per_agency
+set antecedents  = REPLACE(antecedents, 'frozenset({', '[');
+
+UPDATE public.apriori_products_per_agency
+set antecedents  = REPLACE(antecedents, '})', ']');
+
+UPDATE public.apriori_products_per_agency
+set antecedents  = REPLACE(antecedents, '''', '');
+
+-- Update Consequents Column
+
+UPDATE public.apriori_products_per_order
+set consequents = REPLACE(consequents, 'frozenset({', '[');
+
+UPDATE public.apriori_products_per_order
+set consequents  = REPLACE(consequents, '})', ']');
+
+UPDATE public.apriori_products_per_order
+set consequents  = REPLACE(consequents, '''', '');
+
+
+UPDATE public.apriori_products_per_agency
+set consequents = REPLACE(consequents, 'frozenset({', '[');
+
+UPDATE public.apriori_products_per_agency
+set consequents  = REPLACE(consequents, '})', ']');
+
+UPDATE public.apriori_products_per_agency
+set consequents  = REPLACE(consequents, '''', '');
